@@ -137,3 +137,30 @@ footer li{margin-bottom:9px}footer li a{color:var(--mist);font-size:14.5px}foote
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 
 .vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line2);border-radius:var(--rl);overflow:hidden;background:var(--card);box-shadow:0 30px 100px -40px rgba(139,92,246,.4)}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* hero background effects */
+.bgfx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.bgfx b{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+.o1{width:420px;height:420px;background:rgba(139,92,246,.35);left:-8%;top:-12%;animation:dr1 16s ease-in-out infinite alternate}
+.o2{width:360px;height:360px;background:rgba(56,189,248,.28);right:-6%;top:6%;animation:dr2 19s ease-in-out infinite alternate}
+.o3{width:300px;height:300px;background:rgba(217,70,198,.22);left:38%;bottom:-18%;animation:dr1 22s ease-in-out infinite alternate-reverse}
+@keyframes dr1{to{transform:translate(60px,40px) scale(1.15)}}@keyframes dr2{to{transform:translate(-70px,50px) scale(1.2)}}
+.pt{position:absolute;border-radius:50%;background:#fff;opacity:.35;animation:fl linear infinite}
+@keyframes fl{0%{transform:translateY(0);opacity:0}15%{opacity:.5}85%{opacity:.4}100%{transform:translateY(-120px);opacity:0}}
+.orb{position:absolute;z-index:0;pointer-events:none;width:min(640px,115vw);right:-210px;top:70px;opacity:.38;animation:bob 9s ease-in-out infinite alternate}
+.orb svg{width:100%;height:auto;overflow:visible}
+@keyframes bob{to{transform:translateY(-14px)}}
+@media(min-width:900px){.orb{right:-60px;top:40px;opacity:.85;width:640px}}
+.gl{fill:none;stroke:rgba(148,163,184,.28);stroke-width:1}
+.gm{transform-origin:300px 300px;animation:rot 14.4s linear infinite}
+@keyframes rot{0%{transform:scaleX(1)}50%{transform:scaleX(.02)}100%{transform:scaleX(1)}}
+.spin{transform-origin:300px 300px}
+.nd{fill:#38bdf8}.ping{fill:none;stroke:#38bdf8;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:pg 2.8s ease-out infinite}
+.ping.g{stroke:#34d399}
+@keyframes pg{0%{transform:scale(1);opacity:.9}100%{transform:scale(5);opacity:0}}
+.lk{fill:none;stroke:rgba(56,189,248,.45);stroke-width:1;stroke-dasharray:4 5;animation:dash 6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-72}}
+.orbit{transform-origin:300px 300px;animation:orb 24s linear infinite}
+@keyframes orb{to{transform:rotate(360deg)}}
+.kt{font:500 13px "JetBrains Mono",monospace;fill:#a7f3d0}
+@media(prefers-reduced-motion:reduce){.bgfx *,.orb,.orb *{animation:none!important}}
