@@ -11,4 +11,4 @@
 4. Add a card linking to the article in `news.html`, and add its URL to `sitemap.xml`.
 5. Publish only confirmed company facts. Keep draft/announced/in-development statuses precise; never imply a partnership, launch or milestone is complete before it is official.
 
-The News landing page intentionally shows an empty newsroom state until the first approved announcement is ready.
+Add new cards to the grid in `news.html`, newest first.
