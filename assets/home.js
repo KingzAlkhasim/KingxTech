@@ -17,3 +17,18 @@ function type(){
 }
 setTimeout(type,700);
 })();
+
+(function(){
+ if(window.matchMedia("(prefers-reduced-motion:reduce)").matches){
+  document.querySelectorAll("[data-r]").forEach(function(e){e.classList.add("is-in")});return}
+ var els=document.querySelectorAll("[data-r]");
+ if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target)}})},{threshold:.15,rootMargin:"0px 0px -6% 0px"});
+  els.forEach(function(e){io.observe(e)});
+ }else els.forEach(function(e){e.classList.add("is-in")});
+ var root=document.documentElement,prog=document.getElementById("prog"),tick=false;
+ function upd(){tick=false;var y=window.scrollY||0,h=root.scrollHeight-innerHeight;
+  if(y<1400)root.style.setProperty("--py",y);
+  if(prog&&h>0)prog.style.transform="scaleX("+Math.min(1,y/h)+")"}
+ addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+})();
