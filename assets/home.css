@@ -177,3 +177,5 @@
 @media(max-width:700px){.h-fx{opacity:.8}}
 .pm{padding:28px 0 32px;border-bottom:1px solid var(--line)}
 .pm-item{border-radius:18px}
+.pm-ic svg{display:block}
+.pm-img{background:none;overflow:hidden}.pm-img img{width:36px;height:36px;border-radius:10px;display:block}
