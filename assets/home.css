@@ -1,0 +1,143 @@
+/* KingxTech landing page. Loaded after site.css, only on index.html. */
+.home{--ink:#0a0c12;--panel:#10131c;--raise:#161a26;--cyan:#38bdf8;--violet:#8b5cf6;--pink:#d946c6;--ok:#34d399;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--wrap:1120px}
+.home body,.home{background:var(--ink)}
+.home .wrap{max-width:var(--wrap);padding:0 24px}
+.home h1,.home h2,.home h3{font-family:var(--fd);font-weight:700;letter-spacing:-.035em}
+.home p{max-width:62ch}
+.home .btn-main{background:linear-gradient(110deg,var(--pink),var(--violet) 55%,var(--cyan));color:#fff;padding:14px 26px;font-weight:600;font-size:16px;box-shadow:0 12px 40px -14px rgba(139,92,246,.8)}
+.home .btn-main:hover{filter:brightness(1.08)}
+.home .btn-line{border-color:var(--line2);background:transparent;color:var(--text);padding:14px 26px;font-size:16px}
+.home .btn-line:hover{background:rgba(255,255,255,.05)}
+.home .nav .btn-p{background:var(--text);color:var(--ink)}
+
+/* ---------- hero ---------- */
+.h-hero{padding:128px 0 72px;position:relative;overflow:hidden}
+.h-hero::before{content:"";position:absolute;width:760px;height:760px;right:-260px;top:-240px;background:radial-gradient(closest-side,rgba(139,92,246,.22),rgba(56,189,248,.08) 60%,transparent);pointer-events:none}
+.h-hero .wrap{position:relative;display:grid;gap:56px;align-items:center}
+@media(min-width:980px){.h-hero{padding:150px 0 96px}.h-hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px}}
+.h-hero h1{font-size:clamp(2.9rem,8vw,5.2rem);line-height:.98;font-weight:800;letter-spacing:-.045em}
+.h-hero h1 span{display:block}
+.h-lead{font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.65;color:var(--mist);margin-top:28px;max-width:46ch}
+.h-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.h-note{margin-top:22px;font-size:14.5px;color:var(--dim)}
+.h-note b{color:var(--mist);font-weight:500}
+
+/* build window: the one moving thing on the page */
+.bw{background:var(--panel);border:1px solid var(--line2);border-radius:22px;overflow:hidden;box-shadow:0 50px 120px -50px rgba(139,92,246,.55)}
+.bw-top{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--raise)}
+.bw-top i{width:9px;height:9px;border-radius:50%;background:#3a3f50}
+.bw-top span{margin-left:10px;font:12.5px var(--fm);color:var(--dim)}
+.bw-body{padding:20px;display:grid;gap:18px}
+.bw-prompt{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.5;min-height:74px}
+.bw-prompt small{display:block;font-size:12.5px;color:var(--dim);margin-bottom:6px}
+.bw-caret[hidden]{display:none}
+.bw-caret{display:inline-block;width:2px;height:1.05em;background:var(--cyan);vertical-align:-2px;margin-left:1px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.bw-log{font:13px/1.9 var(--fm);color:var(--mist);display:grid;gap:0}
+.bw-log div{display:flex;gap:10px;transition:opacity .35s,transform .35s}
+.bw-log b{color:var(--ok);font-weight:500}
+.bw-site{border-radius:16px;overflow:hidden;background:#f6f7fb;color:#14161f;border:1px solid var(--line2);transition:opacity .5s,transform .5s}
+.bw-site::after{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan))}
+.bw-url{display:flex;align-items:center;gap:8px;padding:9px 14px;background:#e9ecf4;font:12px var(--fm);color:#4b5063}
+.bw-url b{color:#0f9d6b;font-weight:500}
+.bw-shop{padding:16px;display:grid;gap:12px}
+.bw-shop header{display:flex;justify-content:space-between;font:700 15px var(--fd);letter-spacing:-.02em}
+.bw-shop header span{font:500 12.5px var(--fb);color:#5b6176}
+.bw-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bw-tiles div{border-radius:11px;aspect-ratio:1/1.05;padding:9px;display:flex;align-items:flex-end;font:600 11.5px var(--fb)}
+.bw-tiles div:nth-child(1){background:linear-gradient(135deg,#fde68a,#f59e0b)}
+.bw-tiles div:nth-child(2){background:linear-gradient(135deg,#c4b5fd,#7c3aed);color:#fff}
+.bw-tiles div:nth-child(3){background:linear-gradient(135deg,#a5f3fc,#0ea5e9)}
+.bw.pre .bw-log div,.bw.pre .bw-site{opacity:0;transform:translateY(8px)}
+
+/* ---------- shared section rhythm ---------- */
+.h-sec{padding:96px 0}
+.h-sec.tint{background:var(--bg2);border-block:1px solid var(--line)}
+.h-title{font-size:clamp(2rem,4.8vw,3.1rem);line-height:1.05;max-width:18ch}
+.h-sub{color:var(--mist);margin-top:18px;font-size:17px;line-height:1.65;max-width:52ch}
+.h-head{margin-bottom:52px}
+@media(min-width:900px){.h-split>.h-head{position:sticky;top:110px;margin-bottom:0}}
+@media(min-width:900px){.h-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}}
+
+/* ---------- how it works (a real sequence) ---------- */
+.h-steps{display:grid;gap:0;counter-reset:st}
+.h-step{display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:26px 0;border-top:1px solid var(--line);counter-increment:st}
+.h-step:last-child{border-bottom:1px solid var(--line)}
+.h-step::before{content:counter(st);grid-row:span 2;font:700 34px/1 var(--fd);color:var(--cyan);letter-spacing:-.04em}
+.h-step h3{font-size:21px}
+.h-step p{color:var(--mist);font-size:16px;line-height:1.6}
+
+/* ---------- platform (varied sizes, not a grid of equals) ---------- */
+.h-bento{display:grid;gap:16px}
+@media(min-width:900px){.h-bento{grid-template-columns:repeat(6,1fr)}.b4{grid-column:span 4}.b2{grid-column:span 2}.b3{grid-column:span 3}.b6{grid-column:span 6}}
+.bx{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bx.big{border-radius:26px;padding:34px;background:linear-gradient(160deg,var(--raise),var(--panel))}
+.bx h3{font-size:21px;line-height:1.15}
+.bx.big h3{font-size:28px}
+.bx p{color:var(--mist);font-size:15.5px;line-height:1.6}
+.bx .viz{margin-top:auto;padding-top:16px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;padding:7px 14px;font:12.5px var(--fm);color:var(--mist);background:rgba(255,255,255,.03);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip b{color:var(--ok);font-weight:500}
+.chip.bad b{color:#fb7185}
+.mini{font:12.5px/1.9 var(--fm);color:var(--mist)}
+.mini b{color:var(--ok);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font:12.5px var(--fm);padding:5px 12px;border:1px solid var(--line2);border-radius:999px;color:var(--mist)}
+.phone{width:64px;height:104px;border:2px solid var(--line2);border-radius:16px;position:relative;background:var(--raise)}
+.phone::before{content:"";position:absolute;left:14px;right:14px;top:14px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--violet),var(--cyan))}
+.phone::after{content:"";position:absolute;left:50%;bottom:7px;width:18px;height:3px;margin-left:-9px;border-radius:2px;background:var(--line2)}
+
+/* ---------- products: an index, not cards ---------- */
+.h-index{border-top:1px solid var(--line2)}
+.h-row{display:grid;gap:6px 24px;padding:26px 4px;border-bottom:1px solid var(--line);align-items:center;transition:background .2s}
+.h-row:hover{background:rgba(255,255,255,.025)}
+@media(min-width:800px){.h-row{grid-template-columns:230px 1fr 150px;padding:28px 8px}}
+.h-row h3{font-size:24px}
+.h-row p{color:var(--mist);font-size:16px}
+.tag{justify-self:start;font-size:13px;font-weight:500;padding:5px 12px;border-radius:999px;border:1px solid var(--line2);color:var(--mist)}
+@media(min-width:800px){.tag{justify-self:end}}
+.tag.live{color:var(--ok);border-color:rgba(52,211,153,.4)}
+.tag.early{color:#fbbf24;border-color:rgba(251,191,36,.4)}
+.tag.apk{color:#7dd3fc;border-color:rgba(56,189,248,.4)}
+
+/* ---------- timeline ---------- */
+.h-time{display:grid;gap:34px}
+@media(min-width:900px){.h-time{grid-template-columns:repeat(4,1fr);gap:28px}}
+.tm{border-top:2px solid var(--line2);padding-top:18px}
+.tm:nth-child(1){border-color:var(--pink)}.tm:nth-child(2){border-color:var(--violet)}.tm:nth-child(3){border-color:var(--cyan)}
+.tm h3{font-size:22px}
+.tm ul{margin-top:14px;display:grid;gap:10px}
+.tm li{color:var(--mist);font-size:15px;line-height:1.5}
+.tm.next{border-top-style:dashed;border-color:var(--line2)}
+.tm.next p{color:var(--mist);font-size:15px;margin-top:14px}
+.tm.next .btn{margin-top:14px}
+
+/* ---------- community ---------- */
+.h-join{display:grid;gap:28px;background:var(--panel);border:1px solid var(--line2);border-radius:28px;padding:34px}
+@media(min-width:900px){.h-join{grid-template-columns:1.1fr .9fr;padding:48px;gap:56px}}
+.h-join h2{font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.08}
+.h-join p{color:var(--mist);margin-top:14px;line-height:1.65}
+.h-join .f{margin-top:24px}
+.h-chat{display:grid;gap:12px;align-content:center}
+.h-chat a{flex-wrap:wrap;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:var(--raise);transition:border-color .2s}
+.h-chat a:hover{border-color:var(--line2)}
+.h-chat b{font:600 18px var(--fd);letter-spacing:-.02em;display:block}
+.h-chat small{color:var(--dim);font-size:14px}
+.h-chat span{font-weight:600;font-size:14px;color:var(--text);white-space:nowrap}
+
+/* ---------- faq ---------- */
+.h-faq details{border:0;border-top:1px solid var(--line);border-radius:0;background:none;padding:0}
+.h-faq details:last-child{border-bottom:1px solid var(--line)}
+.h-faq summary{padding:22px 0;font:600 18px var(--fd);letter-spacing:-.02em}
+.h-faq details p{padding-bottom:22px;font-size:16px;line-height:1.65}
+
+/* ---------- closing ---------- */
+.h-end{padding:110px 0 120px;text-align:left}
+.h-end h2{font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1;font-weight:800;letter-spacing:-.045em;max-width:14ch}
+.h-end p{color:var(--mist);font-size:18px;margin-top:22px}
+
+@media(prefers-reduced-motion:reduce){.bw-caret{animation:none}.bw-log div,.bw-site{transition:none}}
+
+/* footer labels in plain sentence case */
+.home footer h4{text-transform:none;letter-spacing:0;font:600 15px var(--fd);color:var(--text)}
+@media(max-width:560px){.h-join{padding:24px}.h-join .inline{flex-wrap:wrap}.h-join .inline .in{flex:1 1 100%}.h-join .inline .btn{width:100%}}
